@@ -1,23 +1,36 @@
 package test;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
+
 import org.testng.Assert;
 
 public class Cart {
+        int items;
+        int delivery;
+        int discount;
+        int price;
 
-        String t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).text();
-        int items = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
-        t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).text();
-        int delivery = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
-        int discount = 0;
-        if($(By.xpath("//div[@data-auto='total-discount']/span[2]")).exists()) {
-            t = $(By.xpath("//div[@data-auto='total-discount']/span[@data-52906e8d='true']")).text();
-            discount = Integer.parseInt(t.substring(1, t.indexOf('₽')).replace(" ", ""));
+        Cart(){
+                String t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
+                delivery = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
+                culcValues();
         }
-        t = $(By.xpath("//div[@data-auto='total-price']/span[@class='_1oBlNqVHPq']")).text();
-        int price = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
 
+        public void culcValues(){
+                String t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
+                items = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
+                t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).text();
+                discount = 0;
+                if($(By.xpath("//div[@data-auto='total-discount']/span[2]")).exists()) {
+                        t = $(By.xpath("//div[@data-auto='total-discount']/span[2]")).text();
+                        discount = Integer.parseInt(t.substring(1, t.indexOf('₽')).replace(" ", ""));
+                }
+                t = $(By.xpath("//div[@data-auto='total-price']/span[@class='_1oBlNqVHPq']")).text();
+                price = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
+        }
 
         public void cheskPriceCalculation(){
                 if(items + delivery - discount != price)
@@ -25,15 +38,20 @@ public class Cart {
         }
 
         public void set10items(){
-                $(By.xpath("//input[@type='phone']")).setValue("0");
+                $(By.xpath("//input[@value='1']")).setValue("0");
         }
 
         public void checkFreeDelivery(){
-                discount = 0;
-                t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).text();
+                sleep(2000);
+                delivery = 0;
+                culcValues();
+                String t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
                 items = Integer.parseInt(t.substring(0, t.indexOf('₽')).replace(" ", ""));
                 t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).text();
-                if(!(Objects.equals(t, "бесплатно")))
-                        Assert.fail("Delivery should be free");
+                Assert.assertEquals(t, "бесплатно");
+        }
+
+        public void deleteToothbrush(){
+                $(By.xpath("//*[@class='_3x8CI4SPmj']")).click();
         }
 }

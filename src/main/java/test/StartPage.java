@@ -1,7 +1,11 @@
 package test;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
+import org.testng.Assert;
+
 import static com.codeborne.selenide.Selenide.*;
+
 
 public class StartPage {
     public void closePopUp() {
@@ -9,7 +13,7 @@ public class StartPage {
     }
 
     public void clickLoginButton() {
-        $(By.xpath("//*[text()='Войти в аккаунт']")).click();
+        $(By.xpath("//*[text()='Войти в аккаунт']")).shouldBe(Condition.visible).click();
     }
 
     public void checkMyProfile(){
@@ -30,24 +34,18 @@ public class StartPage {
     }
 
     public void Optionsclick(){
-        $(By.xpath("//*[text() ='Настройки']")).click();
+        $(By.xpath("//*[@title='Мой профиль']")).hover();
+        $(By.xpath("//*[@class='header2-user-menu']//*[text() ='Настройки']")).shouldBe(Condition.visible).click();
     }
 
     public void regionCheck(){
-        String city1 = $(By.xpath("//*[text()='Регион: ']/span/span")).getText();
-//        System.out.println("City1 = " + city1);
-//        sleep(500);
-//        String city2;
-//            if ($(By.className("settings-list_type_address")).exists())
-//                city2 = "YES";
-//            else
-//                city2 = "NO";
-//        System.out.println("City2 = " + city2);
-        String city2 = $(By.className("settings-list_type_address")).getText();
+        String city1 = $(By.xpath("//*[text()='Регион: ']/span/span")).shouldBe(Condition.exist).getText();
+        String city2 = $(By.xpath("//*[@id='region']/div/div/h2/span/span")).shouldBe(Condition.exist).getText();
+        Assert.assertEquals(city1, city2);
     }
 
     public void searchToothbrush(){
-        $(By.xpath("//input[@id = 'header-search']")).setValue("электрические зубные щетки");
+        $(By.xpath("//input[@id = 'header-search']")).shouldBe(Condition.visible).setValue("электрические зубные щетки");
         $(By.xpath("//span[@class = 'search2__button']")).click();
     }
 }

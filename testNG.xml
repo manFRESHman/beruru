@@ -1,0 +1,8 @@
+<suite name = "TestSuite">
+    <parameter name="suite-param" value="Хвалынск" />
+    <test name="AutoQA">
+        <classes>
+            <class name="test.BeruTests"/>
+        </classes>
+    </test>
+</suite>
