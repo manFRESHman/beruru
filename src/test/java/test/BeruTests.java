@@ -1,15 +1,9 @@
 package test;
 
-//import org.junit.Assert;
-//import org.junit.Test;
-
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.Assert;
 
 import java.util.List;
@@ -33,7 +27,7 @@ public class BeruTests {
         close();
     }
 
-    //@Test
+    @Test
     public void loginTest(){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
@@ -47,7 +41,7 @@ public class BeruTests {
 
     @Parameters({ "suite-param" })
     @Test
-    public void regionTest(String regionName){
+    public void regionTest(@Optional("Хвалынск") String regionName){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
         startPage.regionClick();
@@ -61,7 +55,7 @@ public class BeruTests {
         startPage.regionCheck();
     }
 
-    //@Test
+    @Test
     public void toothbrushTest(){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
@@ -76,32 +70,11 @@ public class BeruTests {
         searchResults.showAll();
         searchResults.buy();
         searchResults.toCart();
-        //sleep(2000);
         Cart cart = new Cart();
         cart.cheskPriceCalculation();
-        //sleep(3000);
         cart.set10items();
-        //sleep(3000);
         cart.checkFreeDelivery();
         cart.cheskPriceCalculation();
         cart.deleteToothbrush();
-    }
-
-    public void test1(){
-        for(int i = 0; i < 20; i++){
-            loginTest();
-        }
-    }
-
-    public void test3(){
-        for(int i = 0; i < 20; i++){
-            regionTest("Хвалынск");
-        }
-    }
-
-    public void test2(){
-        for(int i = 0; i < 1; i++){
-            toothbrushTest();
-        }
     }
 }
