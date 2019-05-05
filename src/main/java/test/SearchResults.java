@@ -7,6 +7,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -36,6 +37,7 @@ public class SearchResults {
 
     @Step("Check price changes")
     public void checkPriceChanges(){
+        $(By.xpath("//*[contains(@class,'grid-snippet_react')]")).shouldBe(Condition.visible);
         List<SelenideElement> s = $$(By.xpath("//*[contains(@class,'grid-snippet_react')]"));
         for(int i = 0; i < s.size(); i++){
             JSONObject obj = new JSONObject(s.get(i).getAttribute("data-bem"));
@@ -46,7 +48,7 @@ public class SearchResults {
 
     @Step("Buy Toothbrush")
     public void buy(){
-        sleep(2000);
+        $(By.xpath("//span[text() = 'В корзину']/..")).shouldBe(Condition.visible);
         List<SelenideElement> s = $$(By.xpath("//span[text() = 'В корзину']/.."));
         s.get(s.size() - 2).shouldBe(Condition.visible).click();
     }

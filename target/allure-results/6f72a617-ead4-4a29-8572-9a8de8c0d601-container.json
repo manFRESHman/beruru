@@ -1,0 +1,1 @@
+{"uuid":"6f72a617-ead4-4a29-8572-9a8de8c0d601","name":"test.BeruTests.setUp","description":"","start":1557085040744,"stop":1557085049053,"children":["cd20f634-d4b7-4396-b105-a33a1511d311"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","start":1557085040745,"stop":1557085049052}]}

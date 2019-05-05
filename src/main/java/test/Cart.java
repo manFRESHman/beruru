@@ -1,6 +1,7 @@
 package test;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
@@ -9,35 +10,36 @@ import static com.codeborne.selenide.Selenide.sleep;
 import org.testng.Assert;
 
 public class Cart {
-        int items;
-        int delivery;
-        int discount;
-        int price;
+        SelenideElement items = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']"));
+        SelenideElement delivery = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']"));
+        SelenideElement discount = $(By.xpath("//div[@data-auto='total-discount']/span[2]"));
+        SelenideElement price = $(By.xpath("//div[@data-auto='total-price']/span[@class='_1oBlNqVHPq']"));
 
-        Cart(){
-                String t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
-                delivery = Integer.parseInt(t.substring(0, t.indexOf('\u20BD')).replace(" ", ""));
-                culcValues();
-        }
-
-        @Step("Calculate prices")
-        public void culcValues(){
-                String t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
-                items = Integer.parseInt(t.substring(0, t.indexOf('\u20BD')).replace(" ", ""));
-                t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).text();
-                discount = 0;
-                if($(By.xpath("//div[@data-auto='total-discount']/span[2]")).exists()) {
-                        t = $(By.xpath("//div[@data-auto='total-discount']/span[2]")).text();
-                        discount = Integer.parseInt(t.substring(1, t.indexOf('\u20BD')).replace(" ", ""));
+        @Step("Check price calculation correctness")
+        public void cheskPriceCalculationBefore(){
+                int discountVal = 0;
+                if(discount.exists()) {
+                        discountVal = Integer.parseInt(discount.shouldBe(Condition.visible).text().replaceAll("\\D",""));
                 }
-                t = $(By.xpath("//div[@data-auto='total-price']/span[@class='_1oBlNqVHPq']")).text();
-                price = Integer.parseInt(t.substring(0, t.indexOf('\u20BD')).replace(" ", ""));
+                Assert.assertEquals(
+                        Integer.parseInt(items.shouldBe(Condition.visible).text().replaceAll("\\D","")) +
+                                Integer.parseInt(delivery.shouldBe(Condition.visible).text().replaceAll("\\D","")) -
+                                discountVal,
+                        Integer.parseInt(price.shouldBe(Condition.visible).text().replaceAll("\\D",""))
+                );
         }
 
         @Step("Check price calculation correctness")
-        public void cheskPriceCalculation(){
-                if(items + delivery - discount != price)
-                        Assert.fail("Price calculation error");
+        public void cheskPriceCalculationAfter(){
+                int discountVal = 0;
+                if(discount.exists()) {
+                        discountVal = Integer.parseInt(discount.shouldBe(Condition.visible).text().replaceAll("\\D",""));
+                }
+                Assert.assertEquals(
+                        Integer.parseInt(items.shouldBe(Condition.visible).text().replaceAll("\\D","")) -
+                                discountVal,
+                        Integer.parseInt(price.shouldBe(Condition.visible).text().replaceAll("\\D",""))
+                );
         }
 
         @Step("Set number of items to 10")
@@ -48,12 +50,8 @@ public class Cart {
         @Step("Check free delivery")
         public void checkFreeDelivery(){
                 sleep(2000);
-                delivery = 0;
-                culcValues();
-                String t = $(By.xpath("//div[@data-auto='total-items']/span[@data-auto='value']")).shouldBe(Condition.visible).text();
-                items = Integer.parseInt(t.substring(0, t.indexOf('\u20BD')).replace(" ", ""));
-                t = $(By.xpath("//div[@data-auto='total-delivery']/span[@data-auto='value']")).text();
-                Assert.assertEquals(t, "бесплатно");
+                //$(By.xpath("//*[contains(text(),'товара') | contains(text(),'товаров')]")).shouldBe(Condition.exist);
+                Assert.assertEquals(delivery.should(Condition.exist).text(), "бесплатно");
         }
 
         @Step("Clear the cart")

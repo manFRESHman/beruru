@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class Login {
     @Step("Enter login")
     public void enterLogin() {
-        //open("http://beru.ru");
         $(By.xpath("//*[@name='login']")).setValue("beru.ru.test");
         $(By.className("passp-sign-in-button")).click();
     }
