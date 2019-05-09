@@ -30,7 +30,9 @@ public class SearchResults {
         SelenideElement f = $(By.xpath("//span[@class='button2__text' and text()='Вперёд']/.."));
         while(f.isDisplayed()){
             f.click();
-            sleep(2000);
+            do{
+                sleep(50);
+            } while($(By.xpath("//*[@class='spin2 spin2_size_m i-bem spin2_js_inited spin2_progress_yes']")).isDisplayed());
             checkPriceChanges();
         }
     }

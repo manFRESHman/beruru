@@ -45,12 +45,13 @@ public class Cart {
         @Step("Set number of items to 10")
         public void set10items(){
                 $(By.xpath("//input[@value='1']")).setValue("0");
+                do{
+                        sleep(50);
+                } while($(By.xpath("//*[@class='_26P24A5S4d _3r-SVzfi0F _3N73F2uFeK _2DpvPGuIv1']")).exists());
         }
 
         @Step("Check free delivery")
         public void checkFreeDelivery(){
-                sleep(2000);
-                //$(By.xpath("//*[contains(text(),'товара') | contains(text(),'товаров')]")).shouldBe(Condition.exist);
                 Assert.assertEquals(delivery.should(Condition.exist).text(), "бесплатно");
         }
 

@@ -54,7 +54,7 @@ public class BeruTests {
         return new Object[][] { { "Хвалынск" }, { "Саратов" } };
     }
 
-    //@Test
+    @Test
     public void loginTest(){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
@@ -65,7 +65,7 @@ public class BeruTests {
         startPage.checkMyProfile();
     }
 
-    //@Test(dataProvider = "region")
+    @Test(dataProvider = "region")
     public void regionTest(@Optional("Хвалынск") String regionName){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
