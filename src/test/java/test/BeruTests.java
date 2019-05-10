@@ -2,33 +2,14 @@ package test;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Screenshots;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import com.google.common.io.Files;
-import io.qameta.allure.Attachment;
+import com.codeborne.selenide.testng.ScreenShooter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.*;
-import org.testng.Assert;
 
-import java.io.File;
-//import java.nio.file.Paths;
-import java.util.List;
-import java.util.Objects;
-import java.io.IOException;
-import java.io.IOException;
-//import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.close;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.addListener;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import com.codeborne.selenide.testng.ScreenShooter;
 
 @Listeners({TestListener.class})
 public class BeruTests {

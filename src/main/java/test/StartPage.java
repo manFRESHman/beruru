@@ -26,19 +26,19 @@ public class StartPage {
 
     @Step("Click region button")
     public void regionClick(){
-        $(By.xpath("//*[text()='Регион: ']")).click();
+        $(By.xpath("//*[text()='Регион: ']")).shouldBe(Condition.visible).click();
     }
 
 
     @Step("Region choose")
     public void regionChoose(String regionName){
-        $(By.xpath("//input[@class='input__control']")).setValue(regionName);
-        $(By.xpath("//div[@class='region-suggest__list-item suggestick-list__item suggest2-item suggest2-item_type_text']")).click();
+        $(By.xpath("//input[@class='input__control']")).shouldBe(Condition.visible).setValue(regionName);
+        $(By.xpath("//div[@class='region-suggest__list-item suggestick-list__item suggest2-item suggest2-item_type_text']")).shouldBe(Condition.visible).click();
     }
 
     @Step("Region confirm")
     public void regionConfirm(){
-        $(By.xpath("//span[text()='Продолжить с новым регионом']/..")).click();
+        $(By.xpath("//span[text()='Продолжить с новым регионом']/..")).shouldBe(Condition.visible).click();
     }
 
     @Step("Check 'My Profile' button")

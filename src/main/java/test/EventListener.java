@@ -1,14 +1,9 @@
 package test;
 
-import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.WebDriverRunner;
-import com.google.common.io.Files;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
-
-import java.io.File;
-import java.io.IOException;
 
 public class EventListener extends AbstractWebDriverEventListener  {
     @Attachment(value = "Page screenshot", type = "image/png")
