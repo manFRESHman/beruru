@@ -11,6 +11,8 @@ import org.testng.Assert;
 import org.json.JSONObject;
 
 public class SearchResults {
+    By priceData = By.xpath("//*[contains(@class,'grid-snippet_react')]");
+    By items = By.xpath("//span[text() = 'В корзину']/..");
 
     @Step("Set low price")
     public void setLowPrice(){
@@ -36,8 +38,8 @@ public class SearchResults {
 
     @Step("Check price changes")
     public void checkPriceChanges(){
-        $(By.xpath("//*[contains(@class,'grid-snippet_react')]")).shouldBe(Condition.visible);
-        List<SelenideElement> s = $$(By.xpath("//*[contains(@class,'grid-snippet_react')]"));
+        $(priceData).shouldBe(Condition.visible);
+        List<SelenideElement> s = $$(priceData);
         for(int i = 0; i < s.size(); i++){
             JSONObject obj = new JSONObject(s.get(i).getAttribute("data-bem"));
             int price = obj.getJSONObject("grid-snippet").getInt("price");
@@ -47,8 +49,8 @@ public class SearchResults {
 
     @Step("Buy Toothbrush")
     public void buy(){
-        $(By.xpath("//span[text() = 'В корзину']/..")).shouldBe(Condition.visible);
-        List<SelenideElement> s = $$(By.xpath("//span[text() = 'В корзину']/.."));
+        $(items).shouldBe(Condition.visible);
+        List<SelenideElement> s = $$(items);
         s.get(s.size() - 2).shouldBe(Condition.visible).click();
     }
 

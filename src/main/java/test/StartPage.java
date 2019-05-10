@@ -1,6 +1,7 @@
 package test;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -9,6 +10,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class StartPage {
+    SelenideElement myProfile = $(By.xpath("//*[@title='Мой профиль']"));
+    SelenideElement confirmBtn = $(By.xpath("//span[text()='Продолжить с новым регионом']/.."));
+
     @Step("Close pop-up")
     public void closePopUp() {
         $(By.xpath("/html")).pressEscape();
@@ -21,7 +25,7 @@ public class StartPage {
 
     @Step("Check 'My Profile' button")
     public void checkMyProfile(){
-        $(By.xpath("//*[@title='Мой профиль']")).exists();
+        myProfile.exists();
     }
 
     @Step("Click region button")
@@ -38,12 +42,15 @@ public class StartPage {
 
     @Step("Region confirm")
     public void regionConfirm(){
-        $(By.xpath("//span[text()='Продолжить с новым регионом']/..")).shouldBe(Condition.visible).click();
+        confirmBtn.shouldBe(Condition.visible).click();
+        do{
+            sleep(50);
+        } while(confirmBtn.isDisplayed());
     }
 
     @Step("Check 'My Profile' button")
     public void Optionsclick(){
-        $(By.xpath("//*[@title='Мой профиль']")).hover();
+        myProfile.hover();
         $(By.xpath("//*[@class='header2-user-menu']//*[text() ='Настройки']")).shouldBe(Condition.visible).click();
     }
 

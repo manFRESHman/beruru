@@ -1,4 +1,37 @@
 -------------------------------------------------------------------------------
 Test set: test.BeruTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.887 s - in test.BeruTests
+Tests run: 9, Failures: 2, Errors: 0, Skipped: 6, Time elapsed: 64.657 s <<< FAILURE! - in test.BeruTests
+regionTest(test.BeruTests)  Time elapsed: 12.403 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //*[text()='Войти в аккаунт']}
+Expected: exist
+	at test.BeruTests.regionTest(BeruTests.java:56)
+Caused by: org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=76.0.3788.1)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-41JC6ND', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3788.1, chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7..., userDataDir: C:\Users\D395~1\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:5075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8572acbd23ff8b6ad28a1fd31c1dec0a
+	at test.BeruTests.regionTest(BeruTests.java:56)
+
+tearDown(test.BeruTests)  Time elapsed: 16.465 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //*[@title='Мой профиль']}
+Expected: exist
+	at test.BeruTests.tearDown(BeruTests.java:28)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@title='Мой профиль']"}
+  (Session info: chrome=76.0.3788.1)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-41JC6ND', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3788.1, chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7..., userDataDir: C:\Users\D395~1\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:5075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8572acbd23ff8b6ad28a1fd31c1dec0a
+*** Element info: {Using=xpath, value=//*[@title='Мой профиль']}
+	at test.BeruTests.tearDown(BeruTests.java:28)
+

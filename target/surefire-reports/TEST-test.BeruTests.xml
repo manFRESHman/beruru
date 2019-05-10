@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.BeruTests" time="40.887" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.BeruTests" time="64.657" tests="9" errors="0" skipped="6" failures="2">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\D395~1\AppData\Local\Temp\surefire10783149807086102869\surefirebooter9580221254144866661.jar C:\Users\Игорь\AppData\Local\Temp\surefire10783149807086102869 2019-05-10T23-46-03_588-jvmRun1 surefire306444773089166997tmp surefire_06667787749021444804tmp"/>
+    <property name="sun.java.command" value="C:\Users\D395~1\AppData\Local\Temp\surefire5564956914410534137\surefirebooter8099847806406810998.jar C:\Users\Игорь\AppData\Local\Temp\surefire5564956914410534137 2019-05-11T00-13-22_996-jvmRun1 surefire10677833909591706288tmp surefire_014368835790074043153tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Игорь\beruru\target\test-classes;C:\Users\Игорь\beruru\target\classes;C:\Users\Игорь\.m2\repository\com\codeborne\selenide\5.1.0\selenide-5.1.0.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Игорь\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Игорь\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Игорь\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Игорь\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Игорь\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Игорь\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Игорь\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Игорь\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Игорь\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Игорь\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Игорь\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Игорь\.m2\repository\io\github\bonigarcia\webdrivermanager\3.1.1\webdrivermanager-3.1.1.jar;C:\Users\Игорь\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Игорь\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Игорь\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\Игорь\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Игорь\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\Игорь\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\Игорь\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Игорь\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Игорь\.m2\repository\org\rauschig\jarchivelib\0.8.0\jarchivelib-0.8.0.jar;C:\Users\Игорь\.m2\repository\org\apache\commons\commons-compress\1.14\commons-compress-1.14.jar;C:\Users\Игорь\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\Игорь\.m2\repository\net\lightbody\bmp\browsermob-core\2.1.5\browsermob-core-2.1.5.jar;C:\Users\Игорь\.m2\repository\net\lightbody\bmp\littleproxy\1.1.0-beta-bmp-17\littleproxy-1.1.0-beta-bmp-17.jar;C:\Users\Игорь\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.9\jackson-core-2.8.9.jar;C:\Users\Игорь\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.9\jackson-databind-2.8.9.jar;C:\Users\Игорь\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.9\jackson-annotations-2.8.9.jar;C:\Users\Игорь\.m2\repository\dnsjava\dnsjava\2.1.8\dnsjava-2.1.8.jar;C:\Users\Игорь\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\Игорь\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar;C:\Users\Игорь\.m2\repository\io\netty\netty-all\4.0.51.Final\netty-all-4.0.51.Final.jar;C:\Users\Игорь\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.58\bcprov-jdk15on-1.58.jar;C:\Users\Игорь\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.58\bcpkix-jdk15on-1.58.jar;C:\Users\Игорь\.m2\repository\net\lightbody\bmp\mitm\2.1.5\mitm-2.1.5.jar;C:\Users\Игорь\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\Игорь\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Игорь\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\Игорь\.m2\repository\org\json\json\20180130\json-20180130.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure-testng\2.6.0\allure-testng-2.6.0.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure-descriptions-javadoc\2.6.0\allure-descriptions-javadoc-2.6.0.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure-java-commons\2.6.0\allure-java-commons-2.6.0.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure2-model-api\1.0-BETA6\allure2-model-api-1.0-BETA6.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure2-model-pojo\1.0-BETA6\allure2-model-pojo-1.0-BETA6.jar;C:\Users\Игорь\.m2\repository\org\apache\tika\tika-core\1.14\tika-core-1.14.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure2-model-jackson\1.0-BETA6\allure2-model-jackson-1.0-BETA6.jar;C:\Users\Игорь\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.7.0\jackson-module-jaxb-annotations-2.7.0.jar;C:\Users\Игорь\.m2\repository\org\aspectj\aspectjrt\1.8.10\aspectjrt-1.8.10.jar;C:\Users\Игорь\.m2\repository\org\jooq\joor\0.9.6\joor-0.9.6.jar;C:\Users\Игорь\.m2\repository\io\qameta\allure\allure-selenide\2.10.0\allure-selenide-2.10.0.jar;C:\Users\Игорь\.m2\repository\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;C:\Users\Игорь\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.21.0\surefire-testng-utils-2.21.0.jar;C:\Users\Игорь\.m2\repository\org\apache\maven\surefire\surefire-grouper\2.21.0\surefire-grouper-2.21.0.jar;"/>
     <property name="allure.results.directory" value="C:\Users\Игорь\beruru\target/allure-results"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\D395~1\AppData\Local\Temp\surefire10783149807086102869\surefirebooter9580221254144866661.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\D395~1\AppData\Local\Temp\surefire5564956914410534137\surefirebooter8099847806406810998.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.2+9-LTS"/>
@@ -61,5 +61,87 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="loginTest" classname="test.BeruTests" time="8.854"/>
+  <testcase name="loginTest" classname="test.BeruTests" time="8.579"/>
+  <testcase name="regionTest" classname="test.BeruTests" time="12.403">
+    <failure message="Element not found {By.xpath: //*[text()=&apos;Войти в аккаунт&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //*[text()='Войти в аккаунт']}
+Expected: exist
+	at test.BeruTests.regionTest(BeruTests.java:56)
+Caused by: org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=76.0.3788.1)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-41JC6ND', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3788.1, chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7..., userDataDir: C:\Users\D395~1\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:5075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8572acbd23ff8b6ad28a1fd31c1dec0a
+	at test.BeruTests.regionTest(BeruTests.java:56)
+</failure>
+    <system-err><![CDATA[мая 11, 2019 12:14:00 AM com.codeborne.selenide.drivercommands.CloseDriverCommand run
+INFO: Close webdriver: 1 -> org.openqa.selenium.support.events.EventFiringWebDriver@3ec082a1
+мая 11, 2019 12:14:00 AM com.codeborne.selenide.drivercommands.CloseBrowser run
+INFO: Trying to close the browser EventFiringWebDriver ...
+мая 11, 2019 12:14:01 AM com.codeborne.selenide.drivercommands.CloseDriverCommand run
+INFO: Closed webdriver 1 in 771 ms
+мая 11, 2019 12:14:01 AM com.codeborne.selenide.drivercommands.LazyDriver getAndCheckWebDriver
+INFO: No webdriver is bound to current thread: 1 - let's create a new webdriver
+Starting ChromeDriver 75.0.3770.8 (681f24ea911fe754973dda2fdc6d2a2e159dd300-refs/branch-heads/3770@{#40}) on port 31867
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1557519242.594][WARNING]: This version of ChromeDriver has not been tested with Chrome version 76.
+мая 11, 2019 12:14:03 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+мая 11, 2019 12:14:03 AM com.codeborne.selenide.webdriver.BrowserResizer adjustBrowserSize
+INFO: Set browser size to 1366x768
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=76.0.3788.1 Platform=XP
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 5.1.0
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.drivercommands.CreateDriverCommand createDriver
+INFO: Create webdriver in current thread 1: ChromeDriver -> ChromeDriver: chrome on XP (8572acbd23ff8b6ad28a1fd31c1dec0a)
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.drivercommands.CreateDriverCommand addListeners
+INFO: Add listener to webdriver: test.EventListener@4fea840f
+мая 11, 2019 12:14:04 AM com.codeborne.selenide.drivercommands.CreateDriverCommand addListeners
+INFO: Add listener to webdriver: test.EventListener@ca2be53
+]]></system-err>
+  </testcase>
+  <testcase name="regionTest" classname="test.BeruTests" time="0">
+    <skipped message="Element not found {By.xpath: //*[@title=&apos;Мой профиль&apos;]}&#10;Expected: exist"/>
+  </testcase>
+  <testcase name="tearDown" classname="test.BeruTests" time="16.465">
+    <failure message="Element not found {By.xpath: //*[@title=&apos;Мой профиль&apos;]}&#10;Expected: exist" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //*[@title='Мой профиль']}
+Expected: exist
+	at test.BeruTests.tearDown(BeruTests.java:28)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@title='Мой профиль']"}
+  (Session info: chrome=76.0.3788.1)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-41JC6ND', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3788.1, chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7..., userDataDir: C:\Users\D395~1\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:5075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8572acbd23ff8b6ad28a1fd31c1dec0a
+*** Element info: {Using=xpath, value=//*[@title='Мой профиль']}
+	at test.BeruTests.tearDown(BeruTests.java:28)
+</failure>
+  </testcase>
+  <testcase name="tearDown" classname="test.BeruTests" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="tearDown" classname="test.BeruTests" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="test.BeruTests" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="test.BeruTests" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="toothbrushTest" classname="test.BeruTests" time="0">
+    <skipped message="Element not found {By.xpath: //*[@title=&apos;Мой профиль&apos;]}&#10;Expected: exist"/>
+  </testcase>
 </testsuite>
