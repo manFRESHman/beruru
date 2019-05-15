@@ -47,7 +47,7 @@ public class BeruTests {
     }
 
     @Test(dataProvider = "region")
-    public void regionTest(@Optional("Хвалынск") String regionName){
+    public void regionTest(String regionName){
         StartPage startPage = new StartPage();
         startPage.closePopUp();
         startPage.regionClick();
